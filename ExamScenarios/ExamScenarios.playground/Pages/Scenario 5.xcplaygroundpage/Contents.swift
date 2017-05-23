@@ -15,6 +15,8 @@
 //: The following two statements are required to make the playground run. Please do not remove.
 import Cocoa
 import PlaygroundSupport
+
+
 //: ## Reminder
 //: To see the visual output, be sure to show the Assistant Editor and choose the Timeline option.
 //:
@@ -23,7 +25,40 @@ import PlaygroundSupport
 // Create a new canvas
 let canvas = Canvas(width: 400, height: 600)
 
-// Your code below...
+
+//Make Background
+canvas.fillColor = Color.black
+canvas.drawRectangle(centreX: 200, centreY: 300, width: 400, height: 600)
+
+//funtion that creates arrow
+func arrow (x: Int, y: Int, toX: Int, toY: Int) {
+    canvas.drawShapesWithBorders = false
+    if x == y {
+        canvas.fillColor = Color.white
+    } else {
+        canvas.fillColor = Color.init(hue: 313, saturation: 77, brightness: 65, alpha: 100) }
+    canvas.drawRectangle(bottomLeftX: x, bottomLeftY: y, width: 45, height: 15)
+    canvas.drawRectangle(bottomLeftX: x, bottomLeftY: y, width: 15, height: 45)
+    canvas.defaultLineWidth = 15
+    if x == y {
+        canvas.lineColor = Color.white
+    } else {
+        canvas.lineColor = Color.init(hue: 313, saturation: 77, brightness: 65, alpha: 100) }
+    canvas.drawLine(fromX: x + 15, fromY: y + 15, toX: toX, toY: toY)
+}
+
+
+
+    for row in 0...5 {
+    let x = 67 * row
+    
+    for colom in 0...5 {
+        let y = 67 * colom
+        
+        
+        arrow(x: x, y: y, toX: x + 45, toY: y + 45)
+    }
+}
 
 //: ## Template code
 //: The code below is necessary to see the result of your work in the Assistant Editor at right. Please do not remove.

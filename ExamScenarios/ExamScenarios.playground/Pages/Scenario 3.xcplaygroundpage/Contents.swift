@@ -20,8 +20,15 @@ import PlaygroundSupport
 //:
 //: ![timeline](timeline.png "Timeline")
 //: ## Your code starts here
-// Create a new canvas
+
 let canvas = Canvas(width: 400, height: 600)
+
+//Background
+canvas.fillColor = Color.init(hue: 17, saturation: 100, brightness: 100, alpha: 100)
+canvas.drawRectangle(centreX: 200, centreY: 300, width: 1000, height: 1000)
+
+
+
 
 
 //: ## Template code
