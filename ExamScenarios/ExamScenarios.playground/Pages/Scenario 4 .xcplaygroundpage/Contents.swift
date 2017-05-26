@@ -39,6 +39,7 @@ func roundRec (x: Int, y: Int) {
     if y + 20 == x || x == y + 420 || x == 300 && y == 80 {
         canvas.fillColor = Color.init(hue: 37, saturation: 93, brightness: 98, alpha: 100)
         canvas.drawRoundedRectangle(centreX: x, centreY: y, width: 95, height: 95)
+        canvas.drawRoundedRectangle(centreX: x, centreY: y, width: 95, height: 95, borderWidth: 1, xRadius: 30, yRadius: 30)
     } else {
         canvas.fillColor = Color.init(hue: 326, saturation: 99, brightness: 93, alpha: 100)
         canvas.drawRoundedRectangle(centreX: x, centreY: y, width: 95, height: 95)
