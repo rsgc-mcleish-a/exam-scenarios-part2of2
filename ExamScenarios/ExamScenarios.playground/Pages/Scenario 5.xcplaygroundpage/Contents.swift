@@ -50,10 +50,10 @@ func arrow (x: Int, y: Int, toX: Int, toY: Int) {
 
 
     for row in 0...5 {
-    let x = 67 * row
+    let x = 66 * row + 10
     
     for colom in 0...5 {
-        let y = 67 * colom
+        let y = 66 * colom + 10
         
         
         arrow(x: x, y: y, toX: x + 45, toY: y + 45)

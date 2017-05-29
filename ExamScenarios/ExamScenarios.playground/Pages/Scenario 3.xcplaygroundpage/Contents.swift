@@ -27,8 +27,40 @@ let canvas = Canvas(width: 400, height: 600)
 canvas.fillColor = Color.init(hue: 17, saturation: 100, brightness: 100, alpha: 100)
 canvas.drawRectangle(centreX: 200, centreY: 300, width: 1000, height: 1000)
 
+canvas.drawShapesWithBorders = false
+
+func drawTriangle (centreX: Int, centreY: Int) {
+    
+    var points : [NSPoint] = []
+    
+    
+    let A = NSPoint(x: centreX, y: centreY)
+    let B = NSPoint(x: centreX - 45, y: centreY)
+    let C = NSPoint(x: centreX, y: centreY + 45)
+    
+    points.append(contentsOf: [A, B, C])
+    
+    canvas.drawCustomShape(with: points)
+}
 
 
+
+for x in stride(from: 24, to: 400, by: 44) {
+    for y in stride(from: 224, to: 600, by: 44) {
+        
+        if x + 200 == y || x + 156 == y || x + 112 == y || x + 68 == y || x + 24 == y || x == y + 20 || x == y + 64 || x == y + 108 || x == y + 152 {
+            
+            canvas.fillColor = Color.yellow
+        
+        } else {
+            canvas.fillColor = Color.white
+        }
+        
+        
+        drawTriangle(centreX: x + 24, centreY: y - 20)
+        
+    }
+}
 
 
 //: ## Template code
