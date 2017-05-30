@@ -34,37 +34,28 @@ let black = Color(hue: 0, saturation: 0, brightness: 0, alpha: 100)
 canvas.fillColor = offWhite
 canvas.drawRectangle(centreX: 200, centreY: 300, width: 400, height: 600)
 
-func roundRec (x: Int, y: Int) {
-    canvas.drawShapesWithBorders = false
-    if y + 20 == x || x == y + 420 || x == 300 && y == 80 {
-        canvas.fillColor = Color.init(hue: 37, saturation: 93, brightness: 98, alpha: 100)
-        canvas.drawRoundedRectangle(centreX: x, centreY: y, width: 95, height: 95, borderWidth: 1, xRadius: 20, yRadius: 20)
-    } else {
-        canvas.fillColor = Color.init(hue: 326, saturation: 99, brightness: 93, alpha: 100)
-        canvas.drawRoundedRectangle(centreX: x, centreY: y, width: 95, height: 95, borderWidth: 1, xRadius: 20, yRadius: 20)
-    }
-}
+canvas.drawShapesWithBorders = false
 
-for row in 0...4 {
-    let x = 0 + 100 * row
-    
-    for colom in 0...4 {
-        let y = -20 + 100 * colom
+for x in stride(from: 0, to: 500, by: 100) {
+    for y in stride(from: -20, to: 400, by: 100) {
         
-        roundRec(x: x, y: y)
+        if y + 20 == x || x == y + 420 || x == 300 && y == 80 {
+            
+            canvas.fillColor = yellow
+            
+        } else {
+            
+            canvas.fillColor = pink
+            
+        }
         
         
-    }
-}
-
-for rows in 0...4 {
-    let x = -20 + 100 * rows
-    
-    for coloms in 0...4 {
-        let y = -50 + 100 * coloms
-        
-        canvas.fillColor = Color.init(hue: 240, saturation: 80, brightness: 50, alpha: 50)
         canvas.drawRoundedRectangle(centreX: x, centreY: y, width: 95, height: 95, borderWidth: 1, xRadius: 20, yRadius: 20)
+        
+        canvas.fillColor = blue
+        
+        canvas.drawRoundedRectangle(centreX: x - 20, centreY: y - 33, width: 95, height: 95, borderWidth: 1, xRadius: 20, yRadius: 20)
+        
     }
 }
 //: ## Template code
